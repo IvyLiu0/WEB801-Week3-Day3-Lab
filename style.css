@@ -294,8 +294,7 @@ footer{
     /* padding-bottom: 50px; */
 }
 
-.captionName{
-    position: relative;
+.captionName h2{
     color: #6766bd;
 }
 
@@ -307,6 +306,7 @@ footer{
     height: 50px;
     font-family: Arial, Helvetica, sans-serif;
     background-color: #c0bfffc4;
+    border-radius: 20px;
     color: #13124e;
     font-size:large;
     text-align: center;
