@@ -22,57 +22,76 @@
             </nav>
         </div>
     </header>
-    <h1>Choose the perfect dog to adopt today!</h1>
-    <div>
-        <h1>Feature Dogs</h1>
-        <div class="eightdogs">
-            <div class="dogbox">
-                <div class="dogname">Bella</div>  
-                <img src="images/dog1.jpg" alt="dog1" width="300">
-            </div>
-            <div class="dogbox">
-                <div class="dogname">Max</div> 
-                <img src="images/dog2.jpg" alt="dog2" width="300">
-            </div> 
-            <div class="dogbox">
-                <div class="dogname">Luna</div> 
-                <img src="images/dog3.jpg" alt="dog3" width="300">
-            </div> 
-            <div class="dogbox">
-                <div class="dogname">Charlie</div> 
-                <img src="images/dog4.jpg" alt="dog4" width="300">
-            </div> 
-            <div class="dogbox">
-                <div class="dogname">Lucy</div> 
-                <img src="images/dog5.jpg" alt="dog5" width="300">
-            </div> 
-            <div class="dogbox">
-                <div class="dogname">Cooper</div> 
-                <img src="images/dog6.jpg" alt="dog6" width="300">
-            </div> 
-        </div>
-    </div>
-</body>
-<br><br><br><br>
+    <body id="gallery">
+        <h1>LOVELY AND HAPPY TIME WITH YOUR CUTIES!</h1>
+        <ul id="album">
+            <!-- <li id="photo"><img src="images/gallery/gallery1.jpg"></li>
+            <li id="photo"><img src="images/gallery/gallery2.jpg"></li>
+            <li id="photo"><img src="images//gallery/gallery3.jpg"></li>
+            <li id="photo"><img src="images/gallery/gallery4.jpg"></li>
+            <li id="photo"><img src="images/gallery/gallery5.jpg"></li>
+            <li id="photo"><img src="images/gallery/gallery6.jpg"></li>
+            <li id="photo"><img src="images/gallery/gallery7.jpg"></li>
+            <li id="photo"><img src="images/gallery/gallery8.jpg"></li>
+            <li id="photo"><img src="images/gallery/gallery9.jpg"></li>
+            <li id="photo"><img src="images/gallery/gallery10.jpg"></li>
+            <li id="photo"><img src="images/gallery/gallery11.jpg"></li>
+            <li id="photo"><img src="images/gallery/gallery12.jpg"></li> -->
+        </ul>
+    </body>
+    <br><br><br><br>
 
-<footer>
-    <div id="information">
-        <h4>Email: info@bestfriendadoption.com</h4>
-        <h4>Phone: 626-BESTADO</h4>
-        <h4>Location: Los Angeles, CA</h4>
-    </div>
-    <div id="nondisclaimer">
-        <div class="copy">
-            &copy; Copyright 2023 :: bestfriendadoption.com
+    <footer>
+        <div id="information">
+            <h4>Email: info@bestfriendadoption.com</h4>
+            <h4>Phone: 626-BESTADO</h4>
+            <h4>Location: Los Angeles, CA</h4>
         </div>
-        <div class="social">
-            <a href="#" class="fa fa-facebook"></a>
-            <a href="#" class="fa fa-instagram"></a>
-            <a href="#" class="fa fa-twitter"></a>
+        <div id="nondisclaimer">
+            <div class="copy">
+                &copy; Copyright 2023 :: bestfriendadoption.com
+            </div>
+            <div class="social">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-instagram"></a>
+                <a href="#" class="fa fa-twitter"></a>
+            </div>
         </div>
-    </div>
-    <div id ="disclaimer">
-        <p>This website is designed and created solely for educational purposes only at Westcliff University. All contents are not intended for any commercial gain or use.</p>
-    </div>
-</footer>
+        <div id ="disclaimer">
+            <p>This website is designed and created solely for educational purposes only at Westcliff University. All contents are not intended for any commercial gain or use.</p>
+        </div>
+    </footer>
+
+    <script>
+        var photos = []; //declare an empty array to store image element
+        var fileName = []; //declare an empty element to store image file name
+        var imageList = []; //decalre an empty array to store html list that contain an image
+        var image; //declare an empty variable to store the assembled image list codes
+        var openList = "<li id='photo'>"; //decalre a variable to contain open list tag
+        var closeList = "</li>"; // declare a variable to contain close list tag
+        var captions = [];
+        var captionName = [];
+        var openCaptionTag = "<caption class='captionName'>";
+        var closeCaptionTag = "</caption>";
+        var description;
+        var descText = "Happy time with cuties!";
+        var openDescTag = "<p class='description'>";
+        var closeDescTag = "</p>"
+
+        //create a loop to create 6 images starting with index of 0
+        for (var i=0; i<12; i++){
+            fileName.push("gallery"+(i+1)); //create image file name and store in the array
+            captionName.push("Me and my cuties " + (i+1));
+            photos.push("<img src='images/gallery/"+fileName[i]+".jpg'>");// assemble file name into image element and store in an array
+            captions.push(openCaptionTag + "<h2>"+ captionName[i] + "</h2>" + closeCaptionTag);
+            description= openDescTag + descText +closeDescTag;
+            image = openList + photos[i] + captions[i] + description  + closeList; //assemble image element from array with list elements and store in a variable
+            imageList.push(image); //store (push) the assembled list codes into an array
+        }
+        
+
+
+        //display all six image codes stored in the array
+        document.getElementById("album").innerHTML=imageList.join("");
+    </script>
 </html>
