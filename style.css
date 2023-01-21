@@ -283,7 +283,7 @@ footer{
     font-family: Arial, Helvetica, sans-serif;
 }
 
-#photo img{
+li img{
     width: 300px;
 }
 
@@ -294,8 +294,12 @@ footer{
     /* padding-bottom: 50px; */
 }
 
-.captionName h2{
+.captionName{
     color: #6766bd;
+    font-size: 1.5em;
+    text-align: center;
+    margin-left: -30px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .description{
@@ -313,7 +317,7 @@ footer{
     padding-top: 30px;
 }
 
-#photo:hover:hover{
+li:hover:hover{
     cursor: pointer;
 }
 
@@ -321,7 +325,7 @@ footer{
     visibility: hidden;
 }
 
-#photo:hover .description{
+li:hover .description{
     visibility: visible;
 }
 
